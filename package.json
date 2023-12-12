@@ -1,0 +1,25 @@
+{
+  "name": "vscode-ivy-plugin",
+  "displayName": "vscode-ivy-plugin",
+  "description": "Visual Studio Code support for the IVy language ",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [{
+      "id": "ivy",
+      "aliases": ["IVy", "ivy"],
+      "extensions": [".ivy"],
+      "configuration": "./language-configuration.json"
+    }],
+    "grammars": [{
+      "language": "ivy",
+      "scopeName": "main.ivy",
+      "path": "./syntaxes/ivy.tmLanguage.json"
+    }]
+  }
+}
