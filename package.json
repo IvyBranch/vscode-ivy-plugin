@@ -10,16 +10,28 @@
     "Programming Languages"
   ],
   "contributes": {
-    "languages": [{
-      "id": "ivy",
-      "aliases": ["IVy", "ivy"],
-      "extensions": [".ivy"],
-      "configuration": "./language-configuration.json"
-    }],
-    "grammars": [{
-      "language": "ivy",
-      "scopeName": "main.ivy",
-      "path": "./syntaxes/ivy.tmLanguage.json"
-    }]
+    "languages": [
+      {
+        "id": "ivy",
+        "aliases": [
+          "IVy",
+          "ivy"
+        ],
+        "extensions": [
+          ".ivy"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "ivy",
+        "scopeName": "main.ivy",
+        "path": "./syntaxes/ivy.tmLanguage.json"
+      }
+    ]
+  },
+  "dependencies": {
+    "yo": "^5.0.0"
   }
 }
