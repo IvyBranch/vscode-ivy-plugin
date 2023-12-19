@@ -1,0 +1,44 @@
+#lang ivy1.8
+
+include order
+
+module signal = {
+    action raise
+
+    specification {
+        relation now
+        after init { now := false; }
+        before raise {
+            now := true;
+            now := false;
+        }
+        invariant ~now
+    }
+}
+
+instance nat : unbounded_sequence
+
+module isolate queue(nat) with nat = {
+    action send(t:nat)
+    action recv(t:nat)
+    
+    specification {
+        
+        var pend(X:nat):bool
+        instance trying:signal # this is the poll condition
+
+        after init {
+            pend(X) := false;
+        }
+        before send {
+            require pend(X) -> X < t;
+        }
+        after send {
+            pend(X) := true;
+        }
+        before recv {
+            trying.raise;
+            if some x:nat. 
+        }
+    }
+}
