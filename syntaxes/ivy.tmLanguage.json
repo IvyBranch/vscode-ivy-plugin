@@ -7,6 +7,9 @@
 		},
 		{
 			"include": "#strings"
+		},
+		{
+			"include": "#comments"
 		}
 	],
 	"repository": {
@@ -26,7 +29,29 @@
 					"match": "\\\\."
 				}
 			]
-		}
+		},
+		"strings2": {
+			"begin": "'",
+			"end": "'",
+			"name": "string.quoted.single"
+		},
+		"comments": {
+			"match": "#.*",
+			"name": "comment.line.number-sign"
+		},
+		"operators": {
+			"explanation": "environment markers",
+			"match": ";\\b(<|<=|!=|==|>=|>|~=|===|~|:=)\\b",
+			"captures": {
+			  "1": {
+				"name": "entity.name.selector"
+			  },
+			  "2": {
+				"name": "keyword.operator.comparison"
+			  }
+			}
+		  },
+	  
 	},
 	"scopeName": "main.ivy"
 }
